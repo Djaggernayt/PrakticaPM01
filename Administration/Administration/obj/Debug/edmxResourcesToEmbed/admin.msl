@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище administrationModelContainer" CdmEntityContainer="administrationEntities">
+    <EntitySetMapping Name="Authorization">
+      <EntityTypeMapping TypeName="administrationModel.Authorization">
+        <MappingFragment StoreEntitySet="Authorization">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="administrationModel.Complaints">
+        <MappingFragment StoreEntitySet="Complaints">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="C__doc" ColumnName="№ doc" />
+          <ScalarProperty Name="Date_registrate" ColumnName="Date registrate" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="Correspondent" ColumnName="Correspondent" />
+          <ScalarProperty Name="Date_doc" ColumnName="Date doc" />
+          <ScalarProperty Name="Index_doc" ColumnName="Index doc" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Resolution" ColumnName="Resolution" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="Executed" ColumnName="Executed" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="C__dela" ColumnName="№ dela" />
+          <ScalarProperty Name="C__toma" ColumnName="№ toma" />
+          <ScalarProperty Name="C__ctr" ColumnName="№ ctr" />
+          <ScalarProperty Name="FIle" ColumnName="FIle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Letters">
+      <EntityTypeMapping TypeName="administrationModel.Letters">
+        <MappingFragment StoreEntitySet="Letters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="C__doc" ColumnName="№ doc" />
+          <ScalarProperty Name="Date_registrate" ColumnName="Date registrate" />
+          <ScalarProperty Name="Type_doc" ColumnName="Type doc" />
+          <ScalarProperty Name="Correspondent" ColumnName="Correspondent" />
+          <ScalarProperty Name="Date_doc" ColumnName="Date doc" />
+          <ScalarProperty Name="Index_doc" ColumnName="Index doc" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="Executed" ColumnName="Executed" />
+          <ScalarProperty Name="Resolution" ColumnName="Resolution" />
+          <ScalarProperty Name="Content_doc" ColumnName="Content doc" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="C__dela" ColumnName="№ dela" />
+          <ScalarProperty Name="C__toma" ColumnName="№ toma" />
+          <ScalarProperty Name="C__ctr" ColumnName="№ ctr" />
+          <ScalarProperty Name="FIle" ColumnName="FIle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

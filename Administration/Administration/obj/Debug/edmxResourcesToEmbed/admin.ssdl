@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище administrationModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Authorization">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Complaints">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="№ doc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date registrate" Type="date" Nullable="false" />
+    <Property Name="FIO" Type="varchar(max)" Nullable="false" />
+    <Property Name="Correspondent" Type="varchar(max)" />
+    <Property Name="Date doc" Type="date" />
+    <Property Name="Index doc" Type="int" />
+    <Property Name="Adress" Type="varchar(max)" />
+    <Property Name="Resolution" Type="varchar(max)" />
+    <Property Name="Executor" Type="varchar(max)" />
+    <Property Name="Period" Type="date" />
+    <Property Name="Executed" Type="date" />
+    <Property Name="Result" Type="varchar(max)" />
+    <Property Name="№ dela" Type="varchar" MaxLength="50" />
+    <Property Name="№ toma" Type="varchar" MaxLength="50" />
+    <Property Name="№ ctr" Type="varchar" MaxLength="50" />
+    <Property Name="FIle" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Letters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="№ doc" Type="int" Nullable="false" />
+    <Property Name="Date registrate" Type="date" Nullable="false" />
+    <Property Name="Type doc" Type="varchar" MaxLength="50" />
+    <Property Name="Correspondent" Type="varchar(max)" />
+    <Property Name="Date doc" Type="date" />
+    <Property Name="Index doc" Type="int" />
+    <Property Name="Executor" Type="varchar(max)" />
+    <Property Name="Period" Type="date" />
+    <Property Name="Executed" Type="date" />
+    <Property Name="Resolution" Type="varchar(max)" />
+    <Property Name="Content doc" Type="varchar(max)" />
+    <Property Name="Note" Type="varchar(max)" />
+    <Property Name="№ dela" Type="varchar" MaxLength="50" />
+    <Property Name="№ toma" Type="varchar" MaxLength="50" />
+    <Property Name="№ ctr" Type="varchar" MaxLength="50" />
+    <Property Name="FIle" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="Хранилище administrationModelContainer">
+    <EntitySet Name="Authorization" EntityType="Self.Authorization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Complaints" EntityType="Self.Complaints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
