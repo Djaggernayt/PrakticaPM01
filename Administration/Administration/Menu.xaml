@@ -7,11 +7,13 @@
         mc:Ignorable="d"
         Title="Menu" Height="800" Width="1150" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
-            <Button Content="Входящие письма" MinWidth="100" Margin="10,0,0,0" Click="Button_Click"/>
-            <Button Content="Жалобы" MinWidth="100" Margin="10,0,0,0" Click="Button_Click_1"/>
-            <Button Content="Выход" MinWidth="100" Margin="10,0,0,0" Click="Button_Click_2" HorizontalAlignment="Right" />
-        </StackPanel>
-        <Frame x:Name="Main" Margin="10,45,10,10" NavigationUIVisibility="Hidden"></Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Content="Входящие письма" MaxWidth="120" MinWidth="120" Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="0" Click="Button_Click"/>
+        <Button Content="Жалобы" MaxWidth="120" MinWidth="120" Margin="140,0,0,0" HorizontalAlignment="Left" Grid.Row="0" Click="Button_Click_1"/>
+        <Button Content="Выход" MaxWidth="120" MinWidth="120" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="0" Click="Button_Click_2"/>
+        <Frame x:Name="Main" Margin="10" NavigationUIVisibility="Hidden" Grid.Row="1"></Frame>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Administration"
         mc:Ignorable="d"
-        Title="MainWindow" Height="820" Width="640" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Печать" Height="820" Width="640" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -24,7 +24,7 @@
         </FlowDocumentReader>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Click="ButtonBase_OnClick">Print</Button>
+            <Button Click="ButtonBase_OnClick" Width="80" >Print</Button>
         </StackPanel>
 
     </Grid>

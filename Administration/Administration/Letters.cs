@@ -15,12 +15,12 @@ namespace Administration
     public partial class Letters
     {
         public int ID { get; set; }
-        public int C__doc { get; set; }
+        public string C__doc { get; set; }
         public System.DateTime Date_registrate { get; set; }
         public string Type_doc { get; set; }
         public string Correspondent { get; set; }
         public Nullable<System.DateTime> Date_doc { get; set; }
-        public Nullable<int> Index_doc { get; set; }
+        public string Index_doc { get; set; }
         public string Executor { get; set; }
         public Nullable<System.DateTime> Period { get; set; }
         public Nullable<System.DateTime> Executed { get; set; }

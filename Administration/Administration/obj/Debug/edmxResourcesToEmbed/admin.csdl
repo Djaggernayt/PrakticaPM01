@@ -18,7 +18,7 @@
     <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Correspondent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Date_doc" Type="DateTime" Precision="0" />
-    <Property Name="Index_doc" Type="Int32" />
+    <Property Name="Index_doc" Type="String" />
     <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Resolution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Executor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -35,12 +35,12 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="C__doc" Type="Int32" Nullable="false" />
+    <Property Name="C__doc" Type="String" Nullable="false" />
     <Property Name="Date_registrate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Type_doc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Correspondent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Date_doc" Type="DateTime" Precision="0" />
-    <Property Name="Index_doc" Type="Int32" />
+    <Property Name="Index_doc" Type="String" />
     <Property Name="Executor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Period" Type="DateTime" Precision="0" />
     <Property Name="Executed" Type="DateTime" Precision="0" />

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ using System.Windows.Shapes;
 namespace Administration
 {
     /// <summary>
-    /// Логика взаимодействия для addComplaint.xaml
+    /// Окно предназначено для добавления жалоб
     /// </summary>
     public partial class addComplaint : Window
     {
@@ -26,7 +27,7 @@ namespace Administration
         {
             InitializeComponent();
         }
-
+        //06.04.2023 Калинин Арсений Олегович Описание: метод предназначен для прикрепления файла посредством сохранения пути
         private void attach_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -37,11 +38,46 @@ namespace Administration
             }
             
         }
-
+        //06.04.2023 Калинин Арсений Олегович Описание: метод для ограничений корректности вводимых данных и завершени диалога
         private void add_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                if (dateReg.SelectedDate > DateTime.Now)
+                {
+                    MessageBox.Show("Некорректная дата");
+                    return;
+                }
+                if (datedoc.SelectedDate > DateTime.Now)
+                {
+                    MessageBox.Show("Некорректная дата");
+                    return;
+                }
+                if (period.SelectedDate < dateReg.SelectedDate)
+                {
+                    MessageBox.Show("Некорректная дата");
+                    return;
+                }
+                if (exe.SelectedDate < dateReg.SelectedDate)
+                {
+                    MessageBox.Show("Некорректная дата");
+                    return;
+                }
+                if (dateReg.SelectedDate == null)
+                {
+                    MessageBox.Show("Заполните необходимые поля");
+                    return;
+                }
+                if (numdoc.Text == "")
+                {
+                    MessageBox.Show("Заполните необходимые поля");
+                    return;
+                }
+                if(fio.Text=="")
+                {
+                    MessageBox.Show("Заполните необходимые поля");
+                    return;
+                }
                 datamine.reg = (DateTime)dateReg.SelectedDate;
                 datamine.exe = exe.SelectedDate;
                 datamine.doc = datedoc.SelectedDate;
@@ -56,13 +92,12 @@ namespace Administration
 
         }
 
-        private void indexdoc_PreviewKeyDown(object sender, KeyEventArgs e)
+        //06.04.2023 Калинин Арсений Олегович Описание: открытие прикрепленного файла
+        private void open_Click(object sender, RoutedEventArgs e)
         {
-            if (!((e.Key >= Key.D0 && e.Key <= Key.D9) ||
-          (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) ||
-           e.Key == Key.Back || e.Key == Key.Delete))
+            if(file!= null)
             {
-                e.Handled = true;
+                Process.Start(file);
             }
         }
     }

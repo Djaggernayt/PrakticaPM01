@@ -18,7 +18,7 @@
     <Property Name="FIO" Type="varchar(max)" Nullable="false" />
     <Property Name="Correspondent" Type="varchar(max)" />
     <Property Name="Date doc" Type="date" />
-    <Property Name="Index doc" Type="int" />
+    <Property Name="Index doc" Type="varchar" MaxLength="50" />
     <Property Name="Adress" Type="varchar(max)" />
     <Property Name="Resolution" Type="varchar(max)" />
     <Property Name="Executor" Type="varchar(max)" />
@@ -35,12 +35,12 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="№ doc" Type="int" Nullable="false" />
+    <Property Name="№ doc" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Date registrate" Type="date" Nullable="false" />
     <Property Name="Type doc" Type="varchar" MaxLength="50" />
     <Property Name="Correspondent" Type="varchar(max)" />
     <Property Name="Date doc" Type="date" />
-    <Property Name="Index doc" Type="int" />
+    <Property Name="Index doc" Type="varchar" MaxLength="50" />
     <Property Name="Executor" Type="varchar(max)" />
     <Property Name="Period" Type="date" />
     <Property Name="Executed" Type="date" />

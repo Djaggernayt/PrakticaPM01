@@ -8,7 +8,7 @@
         Title="Карточка входящего письма" Height="625" Width="460" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="№ док-та" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="numdoc" Height="23" HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" PreviewKeyDown="numdoc_PreviewKeyDown"/>
+        <TextBox x:Name="numdoc" Height="23" HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" />
         <Label Content="Дата рег-ии" HorizontalAlignment="Left" Margin="115,134,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dateReg" HorizontalAlignment="Left" Margin="115,159,0,0" VerticalAlignment="Top" MaxWidth="100"/>
         <Label Content="Краткое содержание" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
@@ -25,7 +25,7 @@
         <TextBox x:Name="nstr" Height="23" HorizontalAlignment="Left" Margin="372,431,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="63"/>
         <Button x:Name="add" Content="Добавить" HorizontalAlignment="Left" Margin="332,557,0,0" VerticalAlignment="Top" Height="23" Width="103" Click="add_Click"/>
         <Button x:Name="attach" Content="Прикрепить" HorizontalAlignment="Left" Margin="222,557,0,0" VerticalAlignment="Top" Height="23" Width="104" Click="attach_Click"/>
-        <Label Content="ФИО заявителя" HorizontalAlignment="Left" Margin="230,134,0,0" VerticalAlignment="Top"/>
+        <Label Content="Тип документа" HorizontalAlignment="Left" Margin="230,134,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="combo" Height="23" HorizontalAlignment="Left" Margin="230,160,0,0" Text="" VerticalAlignment="Top" Width="205">
             <ComboBoxItem Content="Письмо"/>
             <ComboBoxItem Content="Постановление"/>
@@ -39,7 +39,7 @@
         <TextBox x:Name="core" Height="23" HorizontalAlignment="Left" Margin="10,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205"/>
         <Label Content="Дата док-та" HorizontalAlignment="Left" Margin="232,184,0,0" VerticalAlignment="Top"/>
         <Label Content="Индекс док-та" HorizontalAlignment="Left" Margin="335,184,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="indexdoc" Height="23" HorizontalAlignment="Left" Margin="335,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" PreviewKeyDown="indexdoc_PreviewKeyDown"/>
+        <TextBox x:Name="indexdoc" Height="23" HorizontalAlignment="Left" Margin="335,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" />
         <Label Content="Резолюция" HorizontalAlignment="Left" Margin="10,297,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="rezole" HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" Text="" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" VerticalAlignment="Top" Width="347" Height="128"/>
         <Label Content="Срок исполн." HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top"/>
@@ -47,6 +47,7 @@
         <Label Content="Исполненно" HorizontalAlignment="Left" Margin="115,242,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="exe" HorizontalAlignment="Left" Margin="115,267,0,0" VerticalAlignment="Top" MaxWidth="100"/>
         <DatePicker x:Name="datedoc" HorizontalAlignment="Left" Margin="230,214,0,0" VerticalAlignment="Top" MaxWidth="100"/>
+        <Button x:Name="open" Content="Открыть файл" HorizontalAlignment="Left" Margin="111,557,0,0" VerticalAlignment="Top" Height="23" Width="104" Click="open_Click" Visibility="Collapsed"/>
 
     </Grid>
 </Window>

@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="150"></RowDefinition>
@@ -20,8 +20,10 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="data" Grid.Row="1" Grid.ColumnSpan="4" AutoGenerateColumns="False" SelectionChanged="data_SelectionChanged" LoadingRow="data_LoadingRow">
+        <DataGrid x:Name="data" Grid.Row="1" Grid.ColumnSpan="6" AutoGenerateColumns="False" SelectionChanged="data_SelectionChanged" LoadingRow="data_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№ док-та" Binding="{Binding C__doc}"/>
                 <DataGridTextColumn Header="Дата регистрации" Binding="{Binding Date_registrate, StringFormat={}{0:dd/MM/yyyy}}"/>
@@ -38,15 +40,24 @@
                 <DataGridTextColumn Header="Имя файла" Binding="{Binding FIle}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="add" Content="Добавить" Grid.Row="0" Grid.Column="0" Click="add_Click"/>
-        <Button x:Name="update" Content="Изменить" Grid.Row="0" Grid.Column="1" Click="update_Click"/>
-        <Button x:Name="delete" Content="Удалить" Grid.Row="0" Grid.Column="2" Click="delete_Click"/>
-        <Button x:Name="print" Content="Печать" Grid.Row="0" Grid.Column="3" Click="print_Click"/>
-        <Label Content="Результат исполнения" Grid.Column="0" Grid.Row="2"/>
-        <Label Content="Кому направленно (резолюция)" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="Краткое содержание документа" Grid.Column="2" Grid.Row="2"/>
-        <TextBlock x:Name="cont" Margin="5,0,0,0" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="result" Margin="5,0,0,0" Grid.Column="0" Grid.Row="3"/>
-        <TextBlock x:Name="rezol" Margin="5,0,0,0" Grid.Column="1" Grid.Row="3" />
+        <Button x:Name="add" Margin="0,0,10,0" Content="Добавить" Grid.Row="0" Grid.Column="0" Click="add_Click"/>
+        <Button x:Name="update" Margin="0,0,10,0" Content="Изменить" Grid.Row="0" Grid.Column="1" Click="update_Click"/>
+        <Button x:Name="delete" Margin="0,0,10,0" Content="Удалить" Grid.Row="0" Grid.Column="2" Click="delete_Click"/>
+        <Button x:Name="print" Margin="0,0,5,0" Content="Печать" Grid.Row="0" Grid.Column="3" Click="print_Click"/>
+        <ComboBox x:Name="combo" Margin="5,5,0,5" Grid.Row="0" Grid.Column="5" DropDownClosed="combo_DropDownClosed" >
+            <ComboBoxItem Content="Нет"/>
+            <ComboBoxItem Background="Yellow" Content="Документ на контроле"/>
+            <ComboBoxItem Background="Red" Content="Неисполненные документы" Foreground="White"/>
+            <ComboBoxItem Background="Green" Content="Исполненные документы" Foreground="White"/>
+            <ComboBoxItem Background="Blue" Content="Исполненные с опозданием" Foreground="White"/>
+        </ComboBox>
+        <Image Source="sr.png" Grid.Row="0" Grid.Column="4" Width="20" HorizontalAlignment="Left" Margin="0,5,0 ,5"/>
+        <TextBox x:Name="search" Margin="25,5,0,5" Grid.Row="0" Grid.Column="4" TextChanged="search_TextChanged"/>
+        <Label Content="Результат исполнения" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="Кому направленно (резолюция)" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="Краткое содержание документа" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="cont" Margin="5,0,0,0" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="result" Margin="5,0,0,0" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="rezol" Margin="5,0,0,0" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

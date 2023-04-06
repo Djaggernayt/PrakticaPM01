@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>book.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotLiquid, Version=2.2.692.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
       <HintPath>..\packages\DotLiquid.2.2.692\lib\net45\DotLiquid.dll</HintPath>
@@ -58,6 +61,7 @@
     <Reference Include="System.Printing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -204,6 +208,9 @@
       <DependentUpon>admin.edmx</DependentUpon>
       <LastGenOutput>admin.cs</LastGenOutput>
     </Content>
+    <Resource Include="book.ico" />
+    <Resource Include="book.png" />
+    <Resource Include="sr.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

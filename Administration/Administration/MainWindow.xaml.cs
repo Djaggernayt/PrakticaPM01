@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace Administration
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Стартовое окно авторизации
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -24,7 +24,7 @@ namespace Administration
         {
             InitializeComponent();
         }
-
+        //04.04.2023 Калинин Арсений Олегович Описание: метод предназначен для авторизации
         private void sign_Click(object sender, RoutedEventArgs e)
         {
             using (var db = new administrationEntities())

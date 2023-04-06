@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Administration
 {
+    //datamine 04.04.2023 Калинин Арсений Олегович Описание: клас предназначен для хранения и транспортировки данных по окнам 
     public static class datamine
     {
         public static DateTime? reg;
@@ -18,6 +19,7 @@ namespace Administration
         public static string ao;
         public static string kc;
         public static string cor;
+        public static string ex;
         public static string pe;
 
     }

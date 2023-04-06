@@ -20,7 +20,7 @@ namespace Administration
         public string FIO { get; set; }
         public string Correspondent { get; set; }
         public Nullable<System.DateTime> Date_doc { get; set; }
-        public Nullable<int> Index_doc { get; set; }
+        public string Index_doc { get; set; }
         public string Adress { get; set; }
         public string Resolution { get; set; }
         public string Executor { get; set; }

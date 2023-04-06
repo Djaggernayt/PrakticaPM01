@@ -10,7 +10,7 @@ using System.Windows.Shapes;
 namespace Administration
 {
     /// <summary>
-    /// Логика взаимодействия для Menu.xaml
+    /// Окно меню реализуемая посредством frame
     /// </summary>
     public partial class Menu : Window
     {

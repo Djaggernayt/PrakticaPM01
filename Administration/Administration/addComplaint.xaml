@@ -31,16 +31,17 @@
         <TextBox x:Name="fio" Height="23" HorizontalAlignment="Left" Margin="230,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205"/>
         <Label Content="Корреспондент" HorizontalAlignment="Left" Margin="230,69,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="core" Height="23" HorizontalAlignment="Left" Margin="230,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205"/>
-        <Label Content="Дата док-та" HorizontalAlignment="Left" Margin="232,141,0,0" VerticalAlignment="Top"/>
-        <Label Content="Индекс док-та" HorizontalAlignment="Left" Margin="335,141,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="indexdoc" Height="23" HorizontalAlignment="Left" Margin="335,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" PreviewKeyDown="indexdoc_PreviewKeyDown"/>
+        <Label Content="Дата док-та" HorizontalAlignment="Left" Margin="232,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="Индекс док-та" HorizontalAlignment="Left" Margin="335,125,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="indexdoc" Height="23" HorizontalAlignment="Left" Margin="335,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
         <Label Content="Резолюция" HorizontalAlignment="Left" Margin="230,208,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="rezole" HorizontalAlignment="Left" Margin="230,239,0,0" TextWrapping="Wrap" Text="" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" VerticalAlignment="Top" Width="205" Height="100"/>
         <Label Content="Срок исполн." HorizontalAlignment="Left" Margin="230,349,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="period" HorizontalAlignment="Left" Margin="230,374,0,0" VerticalAlignment="Top" MaxWidth="100"/>
         <Label Content="Исполненно" HorizontalAlignment="Left" Margin="335,349,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="exe" HorizontalAlignment="Left" Margin="335,374,0,0" VerticalAlignment="Top" MaxWidth="100"/>
-        <DatePicker x:Name="datedoc" HorizontalAlignment="Left" Margin="230,171,0,0" VerticalAlignment="Top" MaxWidth="100"/>
+        <DatePicker x:Name="datedoc" HorizontalAlignment="Left" Margin="230,155,0,0" VerticalAlignment="Top" MaxWidth="100"/>
+        <Button x:Name="open" Content="Открыть файл" HorizontalAlignment="Left" Margin="331,192,0,0" VerticalAlignment="Top" Height="23" Width="104" Click="open_Click" Visibility="Collapsed"/>
 
     </Grid>
 </Window>

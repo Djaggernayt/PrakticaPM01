@@ -24,10 +24,11 @@ using System.Windows.Markup;
 namespace Administration
 {
     /// <summary>
-    /// Логика взаимодействия для Print.xaml
+    /// Окно предназначено для вывода на печать
     /// </summary>
     public partial class Print : Window
     {
+        //05.04.2023 Калинин Арсений Олегович Описание: инициальзация шаблона печати
         public Print()
         {
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace Administration
                 }
             }
         }
+        //06.04.2023 Калинин Арсений Олегович Описание: сохранение и вывод на печать
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             using (var stream = new MemoryStream())
@@ -69,7 +71,7 @@ namespace Administration
         }
 
 
-
+        //06.04.2023 Калинин Арсений Олегович Описание: метод написания шаблона 
         private DotLiquid.Hash CreateDocumentContext()
         {
             var context = new
@@ -81,8 +83,8 @@ namespace Administration
                     new { Title = "ФИО заявителя:", Description = datamine.fi},
                     new { Title = "Адрес отправителя:", Description = datamine.ao},
                     new { Title = "Краткое содержание:", Description = datamine.kc},
-                    new { Title = "Корреспондент", Description = ""},
-                    new { Title = "ОТВ. ЗА КОНТРОЛЬ:", Description = datamine.cor},
+                    new { Title = "Корреспондент", Description = datamine.cor},
+                    new { Title = "ОТВ. ЗА КОНТРОЛЬ:", Description = datamine.ex },
                     new { Title = "СРОК ИСПОЛНЕНИЯ:", Description = datamine.pe},
                 }
 

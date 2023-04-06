@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace Administration
 {
     /// <summary>
-    /// Логика взаимодействия для Letter.xaml
+    /// Окно предназначено для отображения таблицы базы данных
     /// </summary>
     public partial class Letter : Page
     {
@@ -26,20 +26,19 @@ namespace Administration
             InitializeComponent();
             data.ItemsSource = db.Letters.ToList();
         }
+        //05.04.2023 Калинин Арсений Олегович Описание: добавление записи жалоб
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            addLetter b = new addLetter();
-            Letters a = new Letters();
-            if(b.ShowDialog()==true)
+            addLetter b = new addLetter(); //05.04.2023 Калинин Арсений Олегович Описание: переменная b обозначает сокращение BaseAddLetter 
+            Letters a = new Letters(); //05.04.2023 Калинин Арсений Олегович Описание: переменная а обозначает сокращение ActiveTable
+            if (b.ShowDialog()==true)
             {
-                if(b.numdoc.Text!="")
-                    a.C__doc = Convert.ToInt32(b.numdoc.Text);
+                a.C__doc = b.numdoc.Text;
                 a.Date_registrate = (DateTime)datamine.reg;
                 a.Type_doc = b.combo.Text;
                 a.Correspondent = b.core.Text;
                 a.Date_doc = datamine.doc;
-                if (b.indexdoc.Text != "")
-                    a.Index_doc = Convert.ToInt32(b.indexdoc.Text);
+                    a.Index_doc = b.indexdoc.Text;
                 a.Note = b.result.Text;
                 a.Resolution = b.rezole.Text;
                 a.Executor = b.execute.Text;
@@ -60,7 +59,7 @@ namespace Administration
             datamine.per = null;
 
         }
-
+        //05.04.2023 Калинин Арсений Олегович Описание: метод предназначен для редактирования строки в базе данных
         private void update_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -68,12 +67,12 @@ namespace Administration
                 var up = (Letters)data.SelectedItem;
                 if (up != null)
                 {
-                    addLetter b = new addLetter();
-                    b.numdoc.Text = up.C__doc.ToString();
+                    addLetter b = new addLetter(); //05.04.2023 Калинин Арсений Олегович Описание: переменная b обозначает сокращение BaseAddLetter 
+                    b.numdoc.Text = up.C__doc;
                     b.dateReg.SelectedDate = up.Date_registrate;
                     b.combo.Text = up.Type_doc;
                     b.core.Text = up.Correspondent;
-                    b.indexdoc.Text = up.Index_doc.ToString();
+                    b.indexdoc.Text = up.Index_doc;
                     b.datedoc.SelectedDate = up.Date_doc;
                     b.rezole.Text = up.Resolution;
                     b.execute.Text = up.Executor;
@@ -85,18 +84,17 @@ namespace Administration
                     b.ntoma.Text = up.C__toma;
                     b.nstr.Text = up.C__ctr;
                     b.file = up.FIle;
+                    b.open.Visibility = Visibility.Visible;
                     b.add.Content = "Изменить";
                     if (b.ShowDialog() == true)
                     {
-                        Letters a = db.Letters.Find(up.ID);
-                        if (b.numdoc.Text != "")
-                            a.C__doc = Convert.ToInt32(b.numdoc.Text);
+                        Letters a = db.Letters.Find(up.ID);//05.04.2023 Калинин Арсений Олегович Описание: переменная а обозначает сокращение ActiveTable
+                        a.C__doc = b.numdoc.Text;
                         a.Date_registrate = (DateTime)datamine.reg;
                         a.Type_doc = b.combo.Text;
                         a.Correspondent = b.core.Text;
                         a.Date_doc = datamine.doc;
-                        if (b.indexdoc.Text != "")
-                            a.Index_doc = Convert.ToInt32(b.indexdoc.Text);
+                            a.Index_doc = b.indexdoc.Text;
                         a.Note = b.result.Text;
                         a.Resolution = b.rezole.Text;
                         a.Executor = b.execute.Text;
@@ -110,7 +108,6 @@ namespace Administration
                         db.SaveChanges();
                         data.ItemsSource = db.Complaints.ToList();
                     }
-                    b.add.Content = "Добавить";
                 }
             }
             catch
@@ -118,7 +115,7 @@ namespace Administration
 
             }
         }
-
+        //05.04.2023 Калинин Арсений Олегович Описание: метод предназначен для удаления строки из базы данных
         private void delete_Click(object sender, RoutedEventArgs e)
         {
             var del = (Letters)data.SelectedItem;
@@ -128,12 +125,12 @@ namespace Administration
             data.ItemsSource = db.Letters.ToList();
             MessageBox.Show("Запись удалена");
         }
-
+        //05.04.2023 Калинин Арсений Олегович Описание: метод предназначен для предачи переменных печати выбранной строки и вызов диалога печати
         private void print_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
+        //04.04.2023 Калинин Арсений Олегович Описание: метод предназначен для расшеренного отображения данных в текстовых полях
         private void data_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Letters a = data.SelectedItem as Letters;
@@ -144,7 +141,7 @@ namespace Administration
                 cont.Text = a.Content_doc;
             }
         }
-
+        //04.04.2023 Калинин Арсений Олегович Описание: метод предназначен для визуального отображения даты
         private void data_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             try
@@ -185,5 +182,44 @@ namespace Administration
 
             }
         }
+        //06.04.2023 Калинин Арсений Олегович Описание: метод предназначен для поиска значений по ФИО, адресу и результату
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (search.Text == "")
+            {
+                data.ItemsSource = db.Letters.ToList();
+            }
+            else
+            {
+                data.ItemsSource = db.Letters.Where(x => x.Content_doc.Contains(search.Text) || x.Executor.Contains(search.Text) || x.Note.Contains(search.Text)).ToList();
+            }
+        }
+
+        //06.04.2023 Калинин Арсений Олегович Описание: метод предназначен для сортировки таблицы по датам
+        private void combo_DropDownClosed(object sender, EventArgs e)
+        {
+            if (combo.SelectedIndex == 0)
+            {
+                data.ItemsSource = db.Letters.ToList();
+            }
+            else if (combo.SelectedIndex == 1)
+            {
+                data.ItemsSource = db.Letters.Where(x => x.Period > DateTime.Now || x.Executed == null).ToList();
+            }
+            else if (combo.SelectedIndex == 2)
+            {
+                data.ItemsSource = db.Letters.Where(x => x.Executed == null && x.Period < DateTime.Now).ToList();
+            }
+            else if (combo.SelectedIndex == 3)
+            {
+                data.ItemsSource = db.Letters.Where(x => x.Executed != null && x.Executed <= x.Period).ToList();
+            }
+            else if (combo.SelectedIndex == 4)
+            {
+                data.ItemsSource = db.Letters.Where(x => x.Executed > x.Period).ToList();
+            }
+
+        }
+
     }
 }
