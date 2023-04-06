@@ -1,0 +1,9 @@
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\bin\Debug\PdfSharp.Xps.dll
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\bin\Debug\PdfSharp.Xps.pdb
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\bin\Debug\PdfSharp-WPF.dll
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\bin\Debug\PdfSharp-WPF.xml
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\obj\Debug\PdfSharp.Xps.csproj.AssemblyReference.cache
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\obj\Debug\PdfSharp.Xps.csproj.CoreCompileInputs.cache
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\obj\Debug\PdfSharp.Xps.csproj.CopyComplete
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\obj\Debug\PdfSharp.Xps.dll
+C:\Users\arsen\Downloads\WPF2PDF-master\WPF2PDF-master\Libs\PDFSharp 1.31\PdfSharpXps\PdfSharp.Xps\obj\Debug\PdfSharp.Xps.pdb

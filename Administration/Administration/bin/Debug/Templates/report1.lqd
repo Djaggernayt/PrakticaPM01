@@ -1,0 +1,70 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <FlowDocument.Resources>
+    <Style TargetType="TextBlock">
+      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="Margin" Value="5"/>
+      <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+  </FlowDocument.Resources>
+
+  <Paragraph FontSize="24" TextAlignment="Center">
+    {{ Title }}
+  </Paragraph>
+
+  {% for step in Steps -%}
+
+  <BlockUIContainer>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+
+
+      <TextBlock Text="{{ step.Title }}" Grid.Column="0"/>
+
+      <TextBlock Text="{{ step.Description }}" Grid.Column="1"/>
+    </Grid>
+  </BlockUIContainer>
+
+  {% endfor -%}
+
+<Paragraph>
+  ОТЧЕТ О ВЫПОЛНЕНИИ
+</Paragraph>
+
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+  <Paragraph>
+    Предложения_____________________________________________
+  </Paragraph>
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+  <Paragraph>
+    ДАТА ЗАПИСИ:"____"___________20__г. ПОДПИСЬ_____________
+  </Paragraph>
+  <Paragraph>
+    ЗАКЛЮЧЕНИЕ ГЛАВЫ АДМИНИСТРАЦИИ РАЙОНА
+  </Paragraph>
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+  <Paragraph>
+    ________________________________________________________
+  </Paragraph>
+</FlowDocument>

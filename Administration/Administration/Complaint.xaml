@@ -21,7 +21,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="data" Grid.Row="1" Grid.ColumnSpan="4" AutoGenerateColumns="False" SelectionChanged="data_SelectionChanged">
+        <DataGrid x:Name="data" Grid.Row="1" Grid.ColumnSpan="4" AutoGenerateColumns="False" SelectionChanged="data_SelectionChanged" LoadingRow="data_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№ док-та" Binding="{Binding C__doc}"/>
                 <DataGridTextColumn Header="Дата регистрации" Binding="{Binding Date_registrate, StringFormat={}{0:dd/MM/yyyy}}"/>

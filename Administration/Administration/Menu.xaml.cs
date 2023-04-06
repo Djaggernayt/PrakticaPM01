@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -27,12 +22,14 @@ namespace Administration
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Complaint();
+            Main.Content = new Letter();
         }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Letter();
+            Main.Content = new Complaint();
+
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
