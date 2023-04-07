@@ -17,6 +17,7 @@ using System.Windows.Xps.Packaging;
 using System.Windows.Xps;
 using System.Windows.Xps.Serialization;
 using DotLiquid;
+using sample;
 using dotTemplate = DotLiquid.Template;
 using System.Xml;
 using System.Windows.Markup;
@@ -38,7 +39,11 @@ namespace Administration
                 {
                     var templateString = reader.ReadToEnd();
                     var template = dotTemplate.Parse(templateString);
-                    var docContext = CreateDocumentContext();
+                    Hash docContext;
+                    if (datamine.isComplaint)
+                        docContext = SampleDoc.CreateDocumentContext(datamine.nd, datamine.dr, datamine.fi, datamine.ao, datamine.kc, datamine.cor, datamine.ex, datamine.pe);
+                    else
+                        docContext = SampleDoc.CreateDocumentContext(datamine.nd, datamine.dr, datamine.kc, datamine.cor, datamine.ex, datamine.pe);
                     var docString = template.Render(docContext);
                     DocViewer.Document = (FlowDocument)XamlReader.Parse(docString);
                 }
@@ -70,27 +75,5 @@ namespace Administration
 
         }
 
-
-        //06.04.2023 Калинин Арсений Олегович Описание: метод написания шаблона 
-        private DotLiquid.Hash CreateDocumentContext()
-        {
-            var context = new
-            {
-                Title = "КОНТРОЛЬНАЯ КАРТОЧКА",
-                Steps = new List<dynamic>{
-                    new { Title = "№ документа:", Description = datamine.nd},
-                    new { Title = "Дата регистрации:", Description = datamine.dr},
-                    new { Title = "ФИО заявителя:", Description = datamine.fi},
-                    new { Title = "Адрес отправителя:", Description = datamine.ao},
-                    new { Title = "Краткое содержание:", Description = datamine.kc},
-                    new { Title = "Корреспондент", Description = datamine.cor},
-                    new { Title = "ОТВ. ЗА КОНТРОЛЬ:", Description = datamine.ex },
-                    new { Title = "СРОК ИСПОЛНЕНИЯ:", Description = datamine.pe},
-                }
-
-            };
-
-            return DotLiquid.Hash.FromAnonymousObject(context);
-        }
     }
 }

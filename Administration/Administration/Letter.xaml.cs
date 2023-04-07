@@ -106,7 +106,7 @@ namespace Administration
                         a.C__ctr = b.nstr.Text;
                         a.FIle = b.file;
                         db.SaveChanges();
-                        data.ItemsSource = db.Complaints.ToList();
+                        data.ItemsSource = db.Letters.ToList();
                     }
                 }
             }
@@ -128,7 +128,41 @@ namespace Administration
         //05.04.2023 Калинин Арсений Олегович Описание: метод предназначен для предачи переменных печати выбранной строки и вызов диалога печати
         private void print_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
 
+                var pr = (Letters)data.SelectedItem;
+                if (pr != null)
+                {
+                    datamine.nd = pr.C__doc;
+                    //datamine.fi = pr.FIO;
+                    datamine.kc = pr.Content_doc;
+                    datamine.cor = pr.Correspondent;
+                    datamine.ex = pr.Executor;
+                    datamine.dr = pr.Date_registrate.ToString("d.M.yyyy");
+                    //datamine.ao = pr.Note;
+                    DateTime dateTime = (DateTime)pr.Period;
+                    datamine.pe = dateTime.ToString("d.M.yyyy");
+                    Print p = new Print();
+                    if (p.ShowDialog() == true)
+                    {
+
+                    }
+                    datamine.nd = null;
+                    datamine.ex = null;
+                    datamine.fi = null;
+                    datamine.kc = null;
+                    datamine.cor = null;
+                    datamine.dr = null;
+                    datamine.ao = null;
+                    datamine.pe = null;
+
+                }
+            }
+            catch
+            {
+
+            }
         }
         //04.04.2023 Калинин Арсений Олегович Описание: метод предназначен для расшеренного отображения данных в текстовых полях
         private void data_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -204,7 +238,7 @@ namespace Administration
             }
             else if (combo.SelectedIndex == 1)
             {
-                data.ItemsSource = db.Letters.Where(x => x.Period > DateTime.Now || x.Executed == null).ToList();
+                data.ItemsSource = db.Letters.Where(x => (x.Period >= DateTime.Now && x.Executed == null) || x.Period == null).ToList();
             }
             else if (combo.SelectedIndex == 2)
             {

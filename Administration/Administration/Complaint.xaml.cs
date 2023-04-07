@@ -165,6 +165,7 @@ namespace Administration
                     datamine.ex = pr.Executor;
                     datamine.dr = pr.Date_registrate.ToString("d.M.yyyy");
                     datamine.ao = pr.Adress;
+                    datamine.isComplaint = true;
                     DateTime dateTime = (DateTime)pr.Period;
                     datamine.pe = dateTime.ToString("d.M.yyyy");
                     Print p = new Print();
@@ -172,6 +173,7 @@ namespace Administration
                     {
                         
                     }
+                    datamine.isComplaint = false;
                     datamine.nd = null;
                     datamine.ex = null;
                     datamine.fi = null;
@@ -262,7 +264,7 @@ namespace Administration
             }
             else if(combo.SelectedIndex == 1)
             {
-                data.ItemsSource = db.Complaints.Where(x => x.Period > DateTime.Now|| x.Executed == null).ToList();
+                data.ItemsSource = db.Complaints.Where(x => (x.Period >= DateTime.Now && x.Executed == null) || x.Period==null).ToList();
             }
             else if(combo.SelectedIndex == 2)
             {

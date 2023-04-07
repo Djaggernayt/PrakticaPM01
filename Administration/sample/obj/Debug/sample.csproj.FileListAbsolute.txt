@@ -1,0 +1,10 @@
+C:\Users\arsen\Downloads\Praktica\Administration\sample\bin\Debug\sample.dll
+C:\Users\arsen\Downloads\Praktica\Administration\sample\bin\Debug\sample.pdb
+C:\Users\arsen\Downloads\Praktica\Administration\sample\bin\Debug\DotLiquid.dll
+C:\Users\arsen\Downloads\Praktica\Administration\sample\bin\Debug\DotLiquid.xml
+C:\Users\arsen\Downloads\Praktica\Administration\sample\bin\Debug\it\DotLiquid.resources.dll
+C:\Users\arsen\Downloads\Praktica\Administration\sample\obj\Debug\sample.csproj.AssemblyReference.cache
+C:\Users\arsen\Downloads\Praktica\Administration\sample\obj\Debug\sample.csproj.CoreCompileInputs.cache
+C:\Users\arsen\Downloads\Praktica\Administration\sample\obj\Debug\sample.csproj.CopyComplete
+C:\Users\arsen\Downloads\Praktica\Administration\sample\obj\Debug\sample.dll
+C:\Users\arsen\Downloads\Praktica\Administration\sample\obj\Debug\sample.pdb

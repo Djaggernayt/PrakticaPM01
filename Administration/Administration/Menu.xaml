@@ -11,8 +11,8 @@
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Content="Входящие письма" MaxWidth="120" MinWidth="120" Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="0" Click="Button_Click"/>
-        <Button Content="Жалобы" MaxWidth="120" MinWidth="120" Margin="140,0,0,0" HorizontalAlignment="Left" Grid.Row="0" Click="Button_Click_1"/>
+        <Button x:Name="b1" Content="Входящие письма" MaxWidth="120" MinWidth="120" Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="0" Click="Button_Click"/>
+        <Button x:Name="b2" Content="Жалобы" MaxWidth="120" MinWidth="120" Margin="140,0,0,0" HorizontalAlignment="Left" Grid.Row="0" Click="Button_Click_1"/>
         <Button Content="Выход" MaxWidth="120" MinWidth="120" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="0" Click="Button_Click_2"/>
         <Frame x:Name="Main" Margin="10" NavigationUIVisibility="Hidden" Grid.Row="1"></Frame>
     </Grid>

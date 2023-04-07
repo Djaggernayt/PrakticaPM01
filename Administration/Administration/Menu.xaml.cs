@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Drawing;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -18,17 +19,22 @@ namespace Administration
         {
             InitializeComponent();
             Main.Content = new Complaint();
+            b2.Background = new SolidColorBrush(Colors.White);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new Letter();
+            b1.Background = new SolidColorBrush(Colors.White);
+            b2.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFDDDDDD");
         }
 
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Main.Content = new Complaint();
+            b2.Background = new SolidColorBrush(Colors.White);
+            b1.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFDDDDDD");
 
         }
 

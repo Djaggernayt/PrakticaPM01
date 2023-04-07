@@ -21,6 +21,7 @@ namespace Administration
         public static string cor;
         public static string ex;
         public static string pe;
+        public static bool isComplaint = false;
 
     }
 }

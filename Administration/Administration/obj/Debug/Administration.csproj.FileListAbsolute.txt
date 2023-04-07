@@ -42,3 +42,5 @@ C:\Users\arsen\Downloads\Praktica\Administration\Administration\bin\Debug\ru\Ent
 C:\Users\arsen\Downloads\Praktica\Administration\Administration\obj\Debug\Print.g.cs
 C:\Users\arsen\Downloads\Praktica\Administration\Administration\obj\Debug\Print.baml
 C:\Users\arsen\Downloads\Praktica\Administration\Administration\bin\Debug\Templates\report1.lqd
+C:\Users\arsen\Downloads\Praktica\Administration\Administration\bin\Debug\sample.dll
+C:\Users\arsen\Downloads\Praktica\Administration\Administration\bin\Debug\sample.pdb

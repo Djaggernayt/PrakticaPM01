@@ -54,6 +54,9 @@
       <HintPath>PdfSharpXpsBin\PdfSharp.Xps.dll</HintPath>
     </Reference>
     <Reference Include="ReachFramework" />
+    <Reference Include="sample">
+      <HintPath>..\sample\bin\Debug\sample.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
