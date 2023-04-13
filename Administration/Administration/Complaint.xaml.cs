@@ -1,21 +1,9 @@
 ﻿using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
 
 namespace Administration
@@ -36,36 +24,42 @@ namespace Administration
         //05.04.2023 Калинин Арсений Олегович Описание: добавление записи жалоб
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            
-            addComplaint b = new addComplaint(); //05.04.2023 Калинин Арсений Олегович Описание: переменная b обозначает сокращение BaseAddComplaint 
-            Complaints a = new Complaints(); //05.04.2023 Калинин Арсений Олегович Описание: переменная а обозначает сокращение ActiveTable
-            if (b.ShowDialog()==true)
+            try
             {
-                
-                a.C__doc = b.numdoc.Text;
-                a.Date_registrate = (DateTime)datamine.reg;
-                a.FIO = b.fio.Text;
-                a.Correspondent = b.core.Text;
-                a.Date_doc = datamine.doc;
+                addComplaint b = new addComplaint(); //05.04.2023 Калинин Арсений Олегович Описание: переменная b обозначает сокращение BaseAddComplaint 
+                Complaints a = new Complaints(); //05.04.2023 Калинин Арсений Олегович Описание: переменная а обозначает сокращение ActiveTable
+                if (b.ShowDialog() == true)
+                {
+
+                    a.C__doc = b.numdoc.Text;
+                    a.Date_registrate = (DateTime)datamine.reg;
+                    a.FIO = b.fio.Text;
+                    a.Correspondent = b.core.Text;
+                    a.Date_doc = datamine.doc;
                     a.Index_doc = b.indexdoc.Text;
-                a.Adress = b.adress.Text;
-                a.Resolution = b.rezole.Text;
-                a.Executor = b.execute.Text;
-                a.Period = datamine.per;
-                a.Executed = datamine.exe;
-                a.Result = b.result.Text;
-                a.C__dela = b.ndela.Text;
-                a.C__toma = b.ntoma.Text;
-                a.C__ctr = b.nstr.Text;
-                a.FIle = b.file;
-                db.Complaints.Add(a);
-                db.SaveChanges();
-                data.ItemsSource = db.Complaints.ToList();
+                    a.Adress = b.adress.Text;
+                    a.Resolution = b.rezole.Text;
+                    a.Executor = b.execute.Text;
+                    a.Period = datamine.per;
+                    a.Executed = datamine.exe;
+                    a.Result = b.result.Text;
+                    a.C__dela = b.ndela.Text;
+                    a.C__toma = b.ntoma.Text;
+                    a.C__ctr = b.nstr.Text;
+                    a.FIle = b.file;
+                    db.Complaints.Add(a);
+                    db.SaveChanges();
+                    data.ItemsSource = db.Complaints.ToList();
+                }
+                datamine.doc = null;
+                datamine.reg = null;
+                datamine.exe = null;
+                datamine.per = null;
             }
-            datamine.doc = null;
-            datamine.reg = null;
-            datamine.exe = null;
-            datamine.per = null;
+            catch
+            {
+
+            }
 
         }
         //05.04.2023 Калинин Арсений Олегович Описание: метод предназначен для редактирования строки в базе данных
@@ -171,7 +165,7 @@ namespace Administration
                     Print p = new Print();
                     if (p.ShowDialog() == true)
                     {
-                        
+
                     }
                     datamine.isComplaint = false;
                     datamine.nd = null;
@@ -193,12 +187,19 @@ namespace Administration
         //04.04.2023 Калинин Арсений Олегович Описание: метод предназначен для расшеренного отображения данных в текстовых полях
         private void data_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Complaints a = data.SelectedItem as Complaints;
-            if (a != null)
+            try
             {
-                adress.Text = a.Adress;
-                rezol.Text = a.Resolution;
-                cont.Text = a.Result;
+                Complaints a = data.SelectedItem as Complaints;
+                if (a != null)
+                {
+                    adress.Text = a.Adress;
+                    rezol.Text = a.Resolution;
+                    cont.Text = a.Result;
+                }
+            }
+            catch
+            {
+
             }
         }
         //04.04.2023 Калинин Арсений Олегович Описание: метод предназначен для визуального отображения даты
@@ -208,24 +209,24 @@ namespace Administration
             {
                 var row = e.Row;
                 var date = row.DataContext as Complaints;
-                if(data.SelectedItems!=null)
+                if (data.SelectedItems != null)
                 {
-                    if(date == null)
+                    if (date == null)
                     {
                         return;
                     }
-                    else if(date.Executed==null&&date.Period<DateTime.Now)
+                    else if (date.Executed == null && date.Period < DateTime.Now)
                     {
                         row.Background = new SolidColorBrush(Colors.Red);
                         row.Foreground = new SolidColorBrush(Colors.White);
                     }
-                    else if(date.Executed>date.Period)
+                    else if (date.Executed > date.Period)
                     {
                         row.Background = new SolidColorBrush(Colors.Blue);
                         row.Foreground = new SolidColorBrush(Colors.White);
 
                     }
-                    else if(date.Executed != null)
+                    else if (date.Executed != null)
                     {
                         row.Background = new SolidColorBrush(Colors.Green);
                         row.Foreground = new SolidColorBrush(Colors.White);
@@ -245,40 +246,54 @@ namespace Administration
         //06.04.2023 Калинин Арсений Олегович Описание: метод предназначен для поиска значений по ФИО, адресу и результату
         private void search_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (search.Text == "")
+            try
             {
-                data.ItemsSource = db.Complaints.ToList();
+                if (search.Text == "")
+                {
+                    data.ItemsSource = db.Complaints.ToList();
+                }
+                else
+                {
+                    data.ItemsSource = db.Complaints.Where(x => x.FIO.Contains(search.Text) || x.Result.Contains(search.Text) || x.Adress.Contains(search.Text)).ToList();
+                }
             }
-            else
+            catch
             {
-                data.ItemsSource = db.Complaints.Where(x => x.FIO.Contains(search.Text)||x.Result.Contains(search.Text)||x.Adress.Contains(search.Text)).ToList();
+
             }
         }
 
         //06.04.2023 Калинин Арсений Олегович Описание: метод предназначен для сортировки таблицы по датам
         private void combo_DropDownClosed(object sender, EventArgs e)
         {
-            if(combo.SelectedIndex==0)
+            try
             {
-                data.ItemsSource = db.Complaints.ToList();
+                if (combo.SelectedIndex == 0)
+                {
+                    data.ItemsSource = db.Complaints.ToList();
+                }
+                else if (combo.SelectedIndex == 1)
+                {
+                    data.ItemsSource = db.Complaints.Where(x => (x.Period >= DateTime.Now && x.Executed == null) || x.Period == null).ToList();
+                }
+                else if (combo.SelectedIndex == 2)
+                {
+                    data.ItemsSource = db.Complaints.Where(x => x.Executed == null && x.Period < DateTime.Now).ToList();
+                }
+                else if (combo.SelectedIndex == 3)
+                {
+                    data.ItemsSource = db.Complaints.Where(x => x.Executed != null && x.Executed <= x.Period).ToList();
+                }
+                else if (combo.SelectedIndex == 4)
+                {
+                    data.ItemsSource = db.Complaints.Where(x => x.Executed > x.Period).ToList();
+                }
             }
-            else if(combo.SelectedIndex == 1)
+            catch
             {
-                data.ItemsSource = db.Complaints.Where(x => (x.Period >= DateTime.Now && x.Executed == null) || x.Period==null).ToList();
+
             }
-            else if(combo.SelectedIndex == 2)
-            {
-                data.ItemsSource = db.Complaints.Where(x => x.Executed==null&&x.Period<DateTime.Now).ToList();
-            }
-            else if(combo.SelectedIndex == 3)
-            {
-                data.ItemsSource = db.Complaints.Where(x => x.Executed != null&& x.Executed <= x.Period).ToList();
-            }
-            else if(combo.SelectedIndex == 4)
-            {
-                data.ItemsSource = db.Complaints.Where(x => x.Executed > x.Period).ToList();
-            }
-           
+
         }
     }
 }

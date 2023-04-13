@@ -8,10 +8,13 @@
         Title="Печать" Height="820" Width="640" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
-        <FlowDocumentReader x:Name="DocViewer" Grid.Row="0">
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Click="ButtonBase_OnClick" Width="80" >Печать</Button>
+        </StackPanel>
+        <FlowDocumentReader x:Name="DocViewer" Grid.Row="1">
             <FlowDocument>
                 <FlowDocument.Resources>
                     <Style TargetType="TextBlock">
@@ -23,9 +26,7 @@
             </FlowDocument>
         </FlowDocumentReader>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Click="ButtonBase_OnClick" Width="80" >Print</Button>
-        </StackPanel>
+        
 
     </Grid>
 </Window>

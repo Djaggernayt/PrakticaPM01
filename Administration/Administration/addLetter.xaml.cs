@@ -1,18 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Administration
 {
@@ -21,7 +10,6 @@ namespace Administration
     /// </summary>
     public partial class addLetter : Window
     {
-        administrationEntities db = new administrationEntities();
         public string file = null;
         public addLetter()
         {
@@ -30,11 +18,18 @@ namespace Administration
         //06.04.2023 Калинин Арсений Олегович Описание: метод предназначен для прикрепления файла посредством сохранения пути
         private void attach_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Документы|*.pdf;*.doc;*.docx|Все файлы|*.*";
-            if (open.ShowDialog() == true)
+            try
             {
-                file = open.FileName;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Документы|*.pdf;*.doc;*.docx|Все файлы|*.*";
+                if (open.ShowDialog() == true)
+                {
+                    file = open.FileName;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка открытия файла");
             }
 
         }
@@ -43,7 +38,7 @@ namespace Administration
         {
             try
             {
-                if(dateReg.SelectedDate > DateTime.Now)
+                if (dateReg.SelectedDate > DateTime.Now)
                 {
                     MessageBox.Show("Некорректная дата");
                     return;
@@ -53,7 +48,7 @@ namespace Administration
                     MessageBox.Show("Некорректная дата");
                     return;
                 }
-                if(period.SelectedDate < dateReg.SelectedDate)
+                if (period.SelectedDate < dateReg.SelectedDate)
                 {
                     MessageBox.Show("Некорректная дата");
                     return;
@@ -63,12 +58,12 @@ namespace Administration
                     MessageBox.Show("Некорректная дата");
                     return;
                 }
-                if(dateReg.SelectedDate==null)
+                if (dateReg.SelectedDate == null)
                 {
                     MessageBox.Show("Заполните необходимые поля");
                     return;
                 }
-                if(numdoc.Text=="")
+                if (numdoc.Text == "")
                 {
                     MessageBox.Show("Заполните необходимые поля");
                     return;
@@ -90,10 +85,18 @@ namespace Administration
         //06.04.2023 Калинин Арсений Олегович Описание: открытие прикрепленного файла
         private void open_Click(object sender, RoutedEventArgs e)
         {
-            if (file != null)
+            try
             {
-                Process.Start(file);
+                if (file != null)
+                {
+                    Process.Start(file);
+                }
+                else
+                {
+                    MessageBox.Show("Файл отсутствует");
+                }
             }
+            catch { MessageBox.Show("Файл отсутствует"); }
         }
     }
 }

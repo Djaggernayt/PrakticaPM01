@@ -1,7 +1,6 @@
 ﻿using DotLiquid;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using sample;
-using System;
 
 namespace TestProjectSimple
 {
@@ -12,10 +11,10 @@ namespace TestProjectSimple
         [TestMethod]
         public void TestMethodCreateDoc1()
         {
-            string n ="1", dater = "1", krats = "1", corresp = "1", execude = "1", period = "1";
+            string n = "1", dater = "1", krats = "1", corresp = "1", execude = "1", period = "1";
             bool test;
-            Hash hash =  SampleDoc.CreateDocumentContext(n, dater,krats,corresp,execude,period);
-            if(hash!=null)
+            Hash hash = SampleDoc.CreateDocumentContext(n, dater, krats, corresp, execude, period);
+            if (hash != null)
             {
                 test = true;
             }
@@ -46,7 +45,7 @@ namespace TestProjectSimple
         {
             string n = "1sljaskaad", dater = "askdashd", krats = "sdfhdsklhc", corresp = "asdlkahkd", execude = "asdkjasd", period = "asdkadh", fio = "asdhajdk", ad = "sfddgf";
             bool test;
-            Hash hash = SampleDoc.CreateDocumentContext(n, dater, fio,ad, krats, corresp, execude, period);
+            Hash hash = SampleDoc.CreateDocumentContext(n, dater, fio, ad, krats, corresp, execude, period);
             if (hash != null)
             {
                 test = true;

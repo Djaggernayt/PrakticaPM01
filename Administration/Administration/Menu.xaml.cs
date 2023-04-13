@@ -38,9 +38,5 @@ namespace Administration
 
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
     }
 }

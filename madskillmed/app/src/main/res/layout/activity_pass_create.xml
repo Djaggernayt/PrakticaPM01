@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PassCreate">
+
+    <Button
+        android:id="@+id/b14"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toStartOf="@+id/b11"
+        app:layout_constraintTop_toBottomOf="@+id/b11" />
+
+    <Button
+        android:id="@+id/b16"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onBack"
+        android:text="⌫"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/b14"
+        app:layout_constraintTop_toTopOf="@+id/b14" />
+
+    <Button
+        android:id="@+id/b11"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="8"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/b12"
+        app:layout_constraintTop_toTopOf="@+id/b12" />
+
+    <Button
+        android:id="@+id/b13"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="9"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/b11"
+        app:layout_constraintTop_toTopOf="@+id/b11" />
+
+    <Button
+        android:id="@+id/b12"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="7"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toStartOf="@+id/b6"
+        app:layout_constraintTop_toBottomOf="@+id/b6" />
+
+    <Button
+        android:id="@+id/b5"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="5"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/b6"
+        app:layout_constraintTop_toTopOf="@+id/b6" />
+
+    <Button
+        android:id="@+id/b7"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="6"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/b5"
+        app:layout_constraintTop_toTopOf="@+id/b5" />
+
+    <Button
+        android:id="@+id/b6"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="4"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toStartOf="@+id/b1"
+        app:layout_constraintTop_toBottomOf="@+id/b1" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="3"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/b"
+        app:layout_constraintTop_toTopOf="@+id/b" />
+
+    <Button
+        android:id="@+id/b"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="2"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/b1"
+        app:layout_constraintTop_toTopOf="@+id/b1" />
+
+    <ImageView
+        android:id="@+id/ponts4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/ponts3"
+        app:layout_constraintTop_toTopOf="@+id/ponts3"
+        app:srcCompat="@drawable/onpoint" />
+
+    <ImageView
+        android:id="@+id/ponts3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/ponts2"
+        app:layout_constraintTop_toTopOf="@+id/ponts2"
+        app:srcCompat="@drawable/onpoint" />
+
+    <ImageView
+        android:id="@+id/ponts2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/ponts1"
+        app:layout_constraintTop_toTopOf="@+id/ponts1"
+        app:srcCompat="@drawable/onpoint" />
+
+    <Button
+        android:id="@+id/skippass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onSkip"
+        android:text="Пропустить"
+        android:textColor="#1A6FEE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:text="Создайте пароль"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Для защиты ваших персональных данных"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <ImageView
+        android:id="@+id/ponts1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/onpoint" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="132dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onNumb"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+</androidx.constraintlayout.widget.ConstraintLayout>

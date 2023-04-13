@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace sample
 {
     public static class SampleDoc
     {
         //04.04.2023 Калинин Арсений Олегович Описание: метод с перегрузкой предназначенный для формирования шаблона
-        public static DotLiquid.Hash CreateDocumentContext(string n,string dater, string krats , string corresp, string execude, string period)
+        public static DotLiquid.Hash CreateDocumentContext(string n, string dater, string krats, string corresp, string execude, string period)
         {
             var context = new
             {

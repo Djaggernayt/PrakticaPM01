@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -212,7 +213,6 @@
       <LastGenOutput>admin.cs</LastGenOutput>
     </Content>
     <Resource Include="book.ico" />
-    <Resource Include="book.png" />
     <Resource Include="sr.png" />
   </ItemGroup>
   <ItemGroup>

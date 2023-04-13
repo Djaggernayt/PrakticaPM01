@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="onEnter"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/point2"
+        android:layout_width="12.5dp"
+        android:layout_height="12.5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/onpoint"
+        app:layout_constraintStart_toEndOf="@+id/point1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/point1"
+        android:layout_width="12.5dp"
+        android:layout_height="12.5dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/point"
+        app:layout_constraintStart_toStartOf="@+id/textBoard"
+        app:layout_constraintTop_toBottomOf="@+id/textBoard" />
+
+    <ImageView
+        android:id="@+id/point3"
+        android:layout_width="12.5dp"
+        android:layout_height="12.5dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/onpoint"
+        app:layout_constraintStart_toEndOf="@+id/point2"
+        app:layout_constraintTop_toTopOf="@+id/point2" />
+
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onSkip"
+        android:text="Пропустить"
+        android:textColor="#57A9FF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageplus"
+        android:layout_width="167dp"
+        android:layout_height="163dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="273dp"
+        android:fontFamily="sans-serif"
+        android:text="Анализы"
+        android:textColor="#00B712"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBoard"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="29dp"
+        android:gravity="center|top"
+        android:text="Экспресс сбор и получение проб"
+        android:textColor="#939396"
+        app:layout_constraintEnd_toEndOf="@+id/textTitle"
+        app:layout_constraintStart_toStartOf="@+id/textTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <ImageView
+        android:id="@+id/imagepick"
+        android:layout_width="wrap_content"
+        android:layout_height="201dp"
+        android:layout_marginBottom="52dp"
+        android:maxWidth="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textBoard"
+        app:layout_constraintStart_toStartOf="@+id/textBoard"
+        app:srcCompat="@drawable/bottle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

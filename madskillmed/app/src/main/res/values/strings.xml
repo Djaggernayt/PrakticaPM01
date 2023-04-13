@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KASmartlab</string>
+    <string name="title_home">Анализы</string>
+    <string name="title_dashboard">Результаты</string>
+    <string name="title_notifications">Поддержка</string>
+    <string name="title_prof">Профиль</string>
+</resources>
